@@ -1,26 +1,160 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f6f3ee;
+  --foreground: #171412;
+  --card: #fffdf9;
+  --muted: #5c564e;
+  --line: #e6dfd4;
+  --primary: #1f1b16;
+  --primary-fg: #fffaf3;
+  --accent: #c4a35a;
+  --radius: 1.1rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-primary: var(--primary);
+  --color-primary-fg: var(--primary-fg);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme="restaurant"] {
+  --background: #f7f1ea;
+  --foreground: #2a1214;
+  --card: #fffaf6;
+  --muted: #6b4d4a;
+  --line: #ead9d0;
+  --primary: #7a1520;
+  --primary-fg: #fff7f2;
+  --accent: #c9a227;
+}
+
+[data-theme="clothing"] {
+  --background: #f4f1ee;
+  --foreground: #1c1917;
+  --card: #fffcf9;
+  --muted: #6b635c;
+  --line: #e4dcd4;
+  --primary: #3f2a22;
+  --primary-fg: #fff8f3;
+  --accent: #c4846a;
+}
+
+[data-theme="tech"] {
+  --background: #eef2f6;
+  --foreground: #0f1720;
+  --card: #f8fbff;
+  --muted: #526070;
+  --line: #d5dee8;
+  --primary: #12365c;
+  --primary-fg: #f4f8ff;
+  --accent: #2f80ed;
+}
+
+[data-theme="salon"] {
+  --background: #f7f0f3;
+  --foreground: #2a1722;
+  --card: #fff8fb;
+  --muted: #6d5563;
+  --line: #ead7e0;
+  --primary: #6b2d4a;
+  --primary-fg: #fff6fa;
+  --accent: #d4a0b3;
+}
+
+[data-theme="studio"] {
+  --background: #f3f1ec;
+  --foreground: #161412;
+  --card: #fffcf7;
+  --muted: #5e584f;
+  --line: #e3ddd3;
+  --primary: #111111;
+  --primary-fg: #fffaf2;
+  --accent: #c9a227;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display), var(--font-sans), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-wrap {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-fg);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid color-mix(in oklab, var(--foreground) 18%, transparent);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.field {
+  width: 100%;
+  min-height: 2.75rem;
+  border-radius: 0.85rem;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 0.7rem 0.85rem;
+  color: var(--foreground);
+  font: inherit;
+}
+
+.field:focus {
+  outline: 2px solid color-mix(in oklab, var(--primary) 40%, transparent);
+  border-color: var(--primary);
 }
