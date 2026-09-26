@@ -1,5 +1,6 @@
-import { ProductCard } from "@/components/store/product-card";
+import { PageIntro, ProductCard } from "@/components/store/product-card";
 import { brandParams, resolveBrand } from "@/lib/params";
+import { catalog } from "@/lib/store-content";
 
 export function generateStaticParams() {
   return brandParams();
@@ -19,12 +20,17 @@ export default async function ShopPage({
 }) {
   const brand = await resolveBrand(params);
   const { category } = await searchParams;
-  const items = category ? brand.products.filter((product) => product.category === category) : brand.products;
+  const items = catalog(brand);
+  const visible = category ? items.filter((product) => product.category === category) : items;
 
   return (
     <section className="page-wrap py-12">
-      <h1 className="font-display text-4xl">{brand.shopLabel}</h1>
-      <div className="mt-6 flex flex-wrap gap-2">
+      <PageIntro
+        eyebrow={brand.city}
+        title={brand.shopLabel}
+        text={`${visible.length} ${brand.productLabel.toLowerCase()} · cash on ${brand.kind === "food" ? "collect or delivery" : brand.kind === "booking" ? "the day" : "delivery"}`}
+      />
+      <div className="mt-8 flex flex-wrap gap-2">
         <a href={`/${brand.id}/shop`} className={`btn ${!category ? "btn-primary" : "btn-outline"}`}>
           All
         </a>
@@ -39,7 +45,7 @@ export default async function ShopPage({
         ))}
       </div>
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((product) => (
+        {visible.map((product) => (
           <ProductCard key={product.slug} brand={brand} product={product} />
         ))}
       </div>

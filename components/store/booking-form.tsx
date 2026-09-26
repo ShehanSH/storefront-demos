@@ -4,6 +4,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 import { formatLkr } from "@/lib/format";
+import { catalog } from "@/lib/store-content";
 import type { Brand } from "@/lib/types";
 
 const SLOTS = ["10:00 AM", "11:30 AM", "1:00 PM", "2:30 PM", "4:00 PM", "5:30 PM"];
@@ -13,8 +14,9 @@ export function BookingForm({ brand }: { brand: Brand }) {
   const router = useRouter();
   const search = useSearchParams();
   const [pending, setPending] = useState(false);
-  const selected = search.get("service") ?? brand.products[0]?.slug;
-  const service = brand.products.find((product) => product.slug === selected) ?? brand.products[0]!;
+  const services = catalog(brand);
+  const selected = search.get("service") ?? services[0]?.slug;
+  const service = services.find((product) => product.slug === selected) ?? services[0]!;
 
   return (
     <form
@@ -44,7 +46,7 @@ export function BookingForm({ brand }: { brand: Brand }) {
           defaultValue={service.slug}
           onChange={(event) => router.replace(`/${brand.id}/book?service=${event.target.value}`)}
         >
-          {brand.products.map((product) => (
+          {services.map((product) => (
             <option key={product.slug} value={product.slug}>
               {product.name} · {formatLkr(product.price)}
             </option>

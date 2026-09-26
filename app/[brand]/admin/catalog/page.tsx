@@ -1,5 +1,6 @@
 import { formatLkr } from "@/lib/format";
 import { brandParams, resolveBrand } from "@/lib/params";
+import { catalog } from "@/lib/store-content";
 
 export function generateStaticParams() {
   return brandParams();
@@ -31,7 +32,7 @@ export default async function CatalogPage({ params }: { params: Promise<{ brand:
             </tr>
           </thead>
           <tbody>
-            {brand.products.map((product) => (
+            {catalog(brand).map((product) => (
               <tr key={product.slug} className="border-t border-line">
                 <td className="px-4 py-3 font-medium">{product.name}</td>
                 <td className="px-4 py-3">{product.category}</td>
