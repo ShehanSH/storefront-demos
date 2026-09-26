@@ -386,10 +386,6 @@ export function findProduct(brand: Brand, slug: string) {
   return brand.products.find((product) => product.slug === slug) ?? null;
 }
 
-export function salesFollowUpSms() {
-  return `If you want to increase your sales and take orders by sending messages to customers, please contact us - ${SALES_PHONE}`;
-}
-
 export function offerSms(brand: Brand, siteUrl: string) {
   const link = `${siteUrl.replace(/\/$/, "")}/${brand.id}`;
   return `${brand.smsOffer} ${link}`;

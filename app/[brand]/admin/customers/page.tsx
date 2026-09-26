@@ -1,3 +1,4 @@
+import { demoCustomers } from "@/lib/admin-data";
 import { formatLkr } from "@/lib/format";
 import { brandParams, resolveBrand } from "@/lib/params";
 
@@ -21,7 +22,7 @@ export default async function CustomersPage({ params }: { params: Promise<{ bran
             </tr>
           </thead>
           <tbody>
-            {brand.customers.map((customer) => (
+            {demoCustomers(brand).map((customer) => (
               <tr key={customer.phone} className="border-t border-line">
                 <td className="px-4 py-3">{customer.name}</td>
                 <td className="px-4 py-3">{customer.phone}</td>

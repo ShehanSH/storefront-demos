@@ -2,6 +2,7 @@
 
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
+import { demoOrders } from "@/lib/admin-data";
 import { formatLkr } from "@/lib/format";
 import type { Brand } from "@/lib/types";
 
@@ -62,7 +63,7 @@ export function DashboardView({ brand }: { brand: Brand }) {
             </tr>
           </thead>
           <tbody>
-            {brand.orders.map((order) => (
+            {demoOrders(brand).slice(0, 8).map((order) => (
               <tr key={order.id} className="border-t border-line">
                 <td className="px-4 py-3">{order.id}</td>
                 <td className="px-4 py-3">{order.customer}</td>

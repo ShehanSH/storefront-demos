@@ -1,3 +1,4 @@
+import { demoCustomers } from "@/lib/admin-data";
 import { getBrand } from "@/lib/brands";
 import { normalizePhone } from "@/lib/format";
 import type { Brand } from "@/lib/types";
@@ -98,7 +99,7 @@ export function classifyImportedPhones(
 }
 
 export function brandContacts(brandId: string): Contact[] {
-  return getBrand(brandId).customers.map((customer) => ({
+  return demoCustomers(getBrand(brandId)).map((customer) => ({
     id: customer.phone,
     name: customer.name,
     phone: customer.phone,

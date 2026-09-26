@@ -201,7 +201,7 @@ export function CampaignForm({
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Search name or number…"
-              className="field pl-10"
+              className="field field-search"
             />
           </div>
           <button type="button" className="btn btn-outline h-8 px-3 text-xs" onClick={toggleVisible}>
@@ -325,7 +325,7 @@ export function CampaignForm({
         <label className="block text-sm">
           <span className="mb-1 block text-muted">SMS text</span>
           <textarea
-            className="field min-h-40"
+            className="field field-sms"
             value={message}
             onChange={(event) => {
               setTemplate("custom");

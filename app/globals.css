@@ -161,6 +161,14 @@ a {
   font: inherit;
 }
 
+.field-search {
+  padding-left: 2.65rem;
+}
+
+.field-sms {
+  min-height: 18rem;
+}
+
 .field:focus {
   outline: 2px solid color-mix(in oklab, var(--primary) 40%, transparent);
   border-color: var(--primary);
