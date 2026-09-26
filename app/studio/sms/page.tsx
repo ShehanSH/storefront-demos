@@ -23,10 +23,10 @@ export default function StudioSmsPage() {
       <section className="page-wrap space-y-6 py-10">
         <div>
           <p className="text-sm uppercase tracking-[0.2em] text-muted">smsgateway.lk</p>
-          <h1 className="mt-2 font-display text-4xl">Client introduction SMS</h1>
+          <h1 className="mt-2 font-display text-4xl">Offers & specials</h1>
           <p className="mt-3 max-w-2xl text-muted">
-            First send the shop offer with the demo website link. Then send your contact number so the client can hire
-            you for the production build.
+            Text weekend specials and offers to customer phones. Saved numbers are ready to use. Upload a file or type
+            new numbers — duplicates are skipped.
           </p>
         </div>
         <CampaignForm defaultBrand="restaurant" siteUrl={siteUrl} />
