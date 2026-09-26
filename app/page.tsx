@@ -8,7 +8,7 @@ const WHATSAPP_PRICE = salesWhatsAppUrl(
   "Hi, I want a website and SMS notifications for my business. Please share pricing.",
 );
 const WHATSAPP_GENERAL = salesWhatsAppUrl(
-  "Hi, I saw your platform and want a shop dashboard plus SMS for my customers.",
+  "Hi, I want an online shop, staff dashboard, and SMS for my customers.",
 );
 
 const SERVICES = [
@@ -71,13 +71,13 @@ export default function HubPage() {
       </header>
 
       <section id="top" className="page-wrap py-12 sm:py-20">
-        <p className="text-sm uppercase tracking-[0.2em] text-muted">SaaS for shops in Sri Lanka</p>
+        <p className="text-sm uppercase tracking-[0.2em] text-muted">Online orders and SMS for local shops</p>
         <h1 className="mt-3 max-w-3xl font-display text-4xl leading-tight sm:text-6xl">
           Your shop online. Offers by SMS. More repeat sales.
         </h1>
         <p className="mt-5 max-w-2xl text-lg text-muted">
-          One platform: customers order or book, your staff run the dashboard, and SMS sends offers and updates so people
-          come back.
+          Customers order or book from their phone. Your staff run the shop from a dashboard. SMS sends offers and
+          updates so people come back.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a href="#demos" className="btn btn-primary">
@@ -93,12 +93,12 @@ export default function HubPage() {
         <div className="card grid gap-8 p-6 sm:grid-cols-2 sm:p-10">
           <div>
             <p className="text-xs uppercase tracking-wide text-muted">About us</p>
-            <h2 className="mt-2 font-display text-3xl">A shop platform with SMS, not a one-page site</h2>
+            <h2 className="mt-2 font-display text-3xl">Help shops take more orders and keep customers</h2>
           </div>
           <p className="text-muted">
-            These demos show restaurant, clothing, tech, and salon owners the SaaS we run: customer shop, staff
-            dashboard, and SMS. After you contact us we connect your brand, products or menu, and SMS so customers get
-            order updates and Friday offers.
+            We help restaurants, clothing shops, phone stores, and salons sell without only relying on a phone call.
+            You get a customer site, a staff dashboard, and SMS so people hear about Friday offers, ready orders, and
+            new stock. Contact us and we set it up with your name, menu or products, and your customer list.
           </p>
         </div>
       </section>
@@ -159,7 +159,7 @@ export default function HubPage() {
           <h2 className="mt-2 font-display text-3xl text-white">For pricing, please contact us</h2>
           <p className="mt-3 max-w-2xl text-white/80">
             Every shop is different — catalogue size, delivery, booking, and how many SMS you send. Message us on
-            WhatsApp and we will quote the platform and SMS gateway together.
+            WhatsApp and we will quote the website, dashboard, and SMS together.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
@@ -183,7 +183,7 @@ export default function HubPage() {
       <section id="contact" className="page-wrap pb-20">
         <h2 className="font-display text-3xl">Contact us</h2>
         <p className="mt-3 max-w-2xl text-muted">
-          Ready to go live? We set up your shop platform and SMS gateway so you can notify customers and grow sales.
+          Ready to go live? We set up your shop website, staff dashboard, and SMS so you can notify customers and grow sales.
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           <div className="card p-5">
