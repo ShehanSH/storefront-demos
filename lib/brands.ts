@@ -5,6 +5,13 @@ const img = (id: string, extra = "") =>
 
 export const SALES_PHONE = process.env.NEXT_PUBLIC_SALES_PHONE || "0766650952";
 
+export function salesWhatsAppUrl(message?: string) {
+  const digits = SALES_PHONE.replace(/\D/g, "");
+  const intl = digits.startsWith("94") ? digits : digits.replace(/^0/, "94");
+  const query = message ? `?text=${encodeURIComponent(message)}` : "";
+  return `https://wa.me/${intl}${query}`;
+}
+
 export const BRANDS: Record<BrandId, Brand> = {
   restaurant: {
     id: "restaurant",

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { CampaignForm } from "@/components/sms/campaign-form";
+import { SALES_PHONE, salesWhatsAppUrl } from "@/lib/brands";
 
 export const metadata = {
   title: "SMS campaigns",
@@ -15,9 +16,9 @@ export default function StudioSmsPage() {
         <Link href="/" className="font-display text-xl">
           Storefront Demos
         </Link>
-        <Link href="/" className="btn btn-outline">
-          All demos
-        </Link>
+        <a href={salesWhatsAppUrl("Hi, I want SMS and a website for my shop.")} target="_blank" rel="noreferrer" className="btn btn-primary">
+          WhatsApp {SALES_PHONE}
+        </a>
       </header>
       <section className="page-wrap space-y-6 py-10">
         <div>
