@@ -8,7 +8,7 @@ const WHATSAPP_PRICE = salesWhatsAppUrl(
   "Hi, I want a website and SMS notifications for my business. Please share pricing.",
 );
 const WHATSAPP_GENERAL = salesWhatsAppUrl(
-  "Hi, I saw the Storefront Demos website and want to increase sales with a web app and SMS.",
+  "Hi, I saw your platform and want a shop dashboard plus SMS for my customers.",
 );
 
 const SERVICES = [
@@ -71,13 +71,13 @@ export default function HubPage() {
       </header>
 
       <section id="top" className="page-wrap py-12 sm:py-20">
-        <p className="text-sm uppercase tracking-[0.2em] text-muted">Web apps + SMS for Sri Lankan businesses</p>
+        <p className="text-sm uppercase tracking-[0.2em] text-muted">SaaS for shops in Sri Lanka</p>
         <h1 className="mt-3 max-w-3xl font-display text-4xl leading-tight sm:text-6xl">
-          Your customers order online. You message them back. Sales go up.
+          Your shop online. Offers by SMS. More repeat sales.
         </h1>
         <p className="mt-5 max-w-2xl text-lg text-muted">
-          We do not only build a website. We give you a customer site, an admin dashboard, and an SMS gateway so you can
-          send offers and order alerts to your customers.
+          One platform: customers order or book, your staff run the dashboard, and SMS sends offers and updates so people
+          come back.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a href="#demos" className="btn btn-primary">
@@ -93,13 +93,12 @@ export default function HubPage() {
         <div className="card grid gap-8 p-6 sm:grid-cols-2 sm:p-10">
           <div>
             <p className="text-xs uppercase tracking-wide text-muted">About us</p>
-            <h2 className="mt-2 font-display text-3xl">We build sales systems, not just pages</h2>
+            <h2 className="mt-2 font-display text-3xl">A shop platform with SMS, not a one-page site</h2>
           </div>
           <p className="text-muted">
-            Storefront Demos is how we show restaurant, clothing, tech, and salon owners what a finished product looks
-            like. The sites below are samples. After you contact us we build the real app for your brand, connect your
-            products or menu, and set up SMS so customers get messages from your shop — order confirmed, ready for
-            pickup, out for delivery, or a Friday offer.
+            These demos show restaurant, clothing, tech, and salon owners the SaaS we run: customer shop, staff
+            dashboard, and SMS. After you contact us we connect your brand, products or menu, and SMS so customers get
+            order updates and Friday offers.
           </p>
         </div>
       </section>
@@ -144,6 +143,9 @@ export default function HubPage() {
                   <Link href={`/${brand.id}/admin`} className="btn btn-outline">
                     Open admin
                   </Link>
+                  <Link href={`/${brand.id}/admin/sms`} className="btn btn-outline">
+                    SMS gateway
+                  </Link>
                 </div>
               </div>
             </article>
@@ -152,18 +154,18 @@ export default function HubPage() {
       </section>
 
       <section id="pricing" className="page-wrap pb-16">
-        <div className="card bg-primary p-6 text-primary-fg sm:p-10">
-          <p className="text-xs uppercase tracking-[0.2em] text-primary-fg/70">Pricing</p>
-          <h2 className="mt-2 font-display text-3xl">For pricing, please contact us</h2>
-          <p className="mt-3 max-w-2xl text-primary-fg/85">
-            Every shop is different — menu size, delivery, booking, and how many SMS you send. Message us on WhatsApp
-            and we will quote the website, admin, and SMS gateway together.
+        <div className="card-dark p-6 sm:p-10">
+          <p className="text-xs uppercase tracking-[0.2em] text-white/60">Pricing</p>
+          <h2 className="mt-2 font-display text-3xl text-white">For pricing, please contact us</h2>
+          <p className="mt-3 max-w-2xl text-white/80">
+            Every shop is different — catalogue size, delivery, booking, and how many SMS you send. Message us on
+            WhatsApp and we will quote the platform and SMS gateway together.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href={WHATSAPP_PRICE} target="_blank" rel="noreferrer" className="btn bg-white text-primary">
+            <a href={WHATSAPP_PRICE} target="_blank" rel="noreferrer" className="btn bg-white text-black">
               WhatsApp {SALES_PHONE}
             </a>
-            <a href={`tel:${SALES_PHONE}`} className="btn bg-white/10 text-white">
+            <a href={`tel:${SALES_PHONE}`} className="btn bg-white/15 text-white">
               Call {SALES_PHONE}
             </a>
           </div>
@@ -173,8 +175,7 @@ export default function HubPage() {
       <section id="contact" className="page-wrap pb-20">
         <h2 className="font-display text-3xl">Contact us</h2>
         <p className="mt-3 max-w-2xl text-muted">
-          Ready for a production app? We implement the website and the SMS gateway so you can notify customers and grow
-          sales.
+          Ready to go live? We set up your shop platform and SMS gateway so you can notify customers and grow sales.
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           <div className="card p-5">

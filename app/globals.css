@@ -143,6 +143,13 @@ a {
   border-radius: var(--radius);
 }
 
+.card-dark {
+  background: #111111;
+  color: #fffaf2;
+  border: 0;
+  border-radius: var(--radius);
+}
+
 .field {
   width: 100%;
   min-height: 2.75rem;
